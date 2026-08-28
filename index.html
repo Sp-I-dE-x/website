@@ -1,202 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-  >
+    <meta charset="UTF-8">
 
-  <meta name="theme-color" content="#070707">
-  <meta name="description" content="Exclusive access.">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
 
-  <title>Exclusive Access</title>
+    <meta name="theme-color" content="#070707">
+    <meta
+        name="description"
+        content="Private access."
+    >
 
-  <style>
-    :root {
-      --bg: #070707;
-      --surface: rgba(255, 255, 255, 0.045);
-      --border: rgba(255, 255, 255, 0.10);
-      --text: #ffffff;
-    }
+    <title>Exclusive Access</title>
 
-    * {
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
+    <style>
+        /* =========================================================
+           RESET
+        ========================================================= */
 
-    html {
-      min-width: 320px;
-      background: var(--bg);
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      min-width: 320px;
-      min-height: 100vh;
-      min-height: 100svh;
-      min-height: 100dvh;
+        html {
+            min-width: 320px;
+            background: #070707;
+        }
 
-      display: grid;
-      place-items: center;
+        body {
+            min-width: 320px;
+            min-height: 100vh;
+            min-height: 100svh;
+            min-height: 100dvh;
 
-      padding:
-        max(20px, env(safe-area-inset-top))
-        max(18px, env(safe-area-inset-right))
-        max(20px, env(safe-area-inset-bottom))
-        max(18px, env(safe-area-inset-left));
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-      color: var(--text);
+            padding:
+                max(20px, env(safe-area-inset-top))
+                max(18px, env(safe-area-inset-right))
+                max(20px, env(safe-area-inset-bottom))
+                max(18px, env(safe-area-inset-left));
 
-      background:
-        radial-gradient(
-          900px 500px at 50% -10%,
-          rgba(255, 255, 255, 0.055),
-          transparent 60%
-        ),
-        linear-gradient(
-          180deg,
-          #0a0a0a 0%,
-          #050505 100%
-        );
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(255, 255, 255, 0.07),
+                    transparent 42%
+                ),
+                linear-gradient(
+                    180deg,
+                    #0b0b0b 0%,
+                    #050505 100%
+                );
 
-      font-family:
-        Inter,
-        ui-sans-serif,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Helvetica,
-        Arial,
-        sans-serif;
-    }
+            color: #ffffff;
 
-    main {
-      width: min(100%, 470px);
-    }
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
 
-    .card {
-      width: 100%;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
-      padding:
-        clamp(30px, 7vw, 44px)
-        clamp(18px, 5vw, 30px);
+        /* =========================================================
+           MAIN
+        ========================================================= */
 
-      border: 1px solid var(--border);
-      border-radius: 24px;
+        .page {
+            width: 100%;
+            max-width: 520px;
+        }
 
-      background: var(--surface);
+        /* =========================================================
+           CARD
+        ========================================================= */
 
-      box-shadow:
-        0 24px 70px rgba(0, 0, 0, 0.42),
-        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+        .card {
+            width: 100%;
 
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
+            padding:
+                clamp(34px, 8vw, 52px)
+                clamp(20px, 6vw, 34px);
 
-    h1 {
-      margin: 0 0 clamp(26px, 6vw, 34px);
+            text-align: center;
 
-      text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 28px;
 
-      font-size: clamp(32px, 8vw, 44px);
-      font-weight: 800;
-      line-height: 1.04;
-      letter-spacing: -0.035em;
-    }
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255, 255, 255, 0.055),
+                    rgba(255, 255, 255, 0.025)
+                );
 
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.48),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
-      width: 100%;
-      min-height: 64px;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
 
-      padding: 16px 22px;
+        /* =========================================================
+           MAIN HEADING
+        ========================================================= */
 
-      border: 0;
-      border-radius: 16px;
+        h1 {
+            font-size: clamp(40px, 10vw, 64px);
+            font-weight: 800;
 
-      background: #ffffff;
-      color: #070707;
+            line-height: 0.98;
+            letter-spacing: -0.045em;
 
-      text-decoration: none;
-      text-align: center;
+            color: #ffffff;
 
-      font-size: 17px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 0.01em;
+            overflow-wrap: anywhere;
+        }
 
-      cursor: pointer;
-      user-select: none;
-      touch-action: manipulation;
+        /* =========================================================
+           SECOND HEADING
+        ========================================================= */
 
-      transition:
-        transform 120ms ease,
-        opacity 120ms ease;
-    }
+        h2 {
+            margin-top: 14px;
 
-    .button:hover {
-      opacity: 0.94;
-    }
+            font-size: clamp(20px, 5vw, 27px);
+            font-weight: 500;
 
-    .button:active {
-      transform: scale(0.985);
-    }
+            line-height: 1.15;
+            letter-spacing: -0.02em;
 
-    .button:focus-visible {
-      outline: 3px solid rgba(255, 255, 255, 0.45);
-      outline-offset: 4px;
-    }
+            color: rgba(255, 255, 255, 0.70);
+        }
 
-    @media (max-width: 420px) {
-      .card {
-        padding: 28px 16px;
-        border-radius: 20px;
-      }
+        /* =========================================================
+           TAGLINE
+        ========================================================= */
 
-      h1 {
-        margin-bottom: 24px;
-      }
+        .tagline {
+            margin-top: 12px;
+            margin-bottom: clamp(30px, 7vw, 40px);
 
-      .button {
-        min-height: 62px;
-        border-radius: 15px;
-        font-size: 16px;
-      }
-    }
+            font-size: clamp(13px, 3.5vw, 15px);
+            font-weight: 500;
 
-    @media (prefers-reduced-motion: reduce) {
-      .button {
-        transition: none;
-      }
-    }
-  </style>
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+
+            color: rgba(255, 255, 255, 0.42);
+        }
+
+        /* =========================================================
+           BUTTON
+        ========================================================= */
+
+        .join-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            min-height: 70px;
+
+            padding: 18px 24px;
+
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 18px;
+
+            background: #ffffff;
+            color: #070707;
+
+            text-decoration: none;
+
+            font-size: clamp(16px, 4vw, 18px);
+            font-weight: 800;
+            line-height: 1;
+
+            letter-spacing: 0.01em;
+
+            cursor: pointer;
+            user-select: none;
+            touch-action: manipulation;
+
+            -webkit-tap-highlight-color: transparent;
+
+            transition:
+                transform 0.12s ease,
+                opacity 0.12s ease,
+                box-shadow 0.12s ease;
+        }
+
+        .join-button:hover {
+            opacity: 0.95;
+
+            box-shadow:
+                0 10px 30px rgba(255, 255, 255, 0.08);
+        }
+
+        .join-button:active {
+            transform: scale(0.985);
+        }
+
+        .join-button:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.45);
+            outline-offset: 4px;
+        }
+
+        /* =========================================================
+           SMALL PHONES
+        ========================================================= */
+
+        @media (max-width: 380px) {
+            body {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .card {
+                padding:
+                    30px 15px 26px;
+
+                border-radius: 22px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                margin-top: 12px;
+                font-size: 19px;
+            }
+
+            .tagline {
+                margin-top: 10px;
+                margin-bottom: 28px;
+
+                font-size: 12px;
+                letter-spacing: 0.06em;
+            }
+
+            .join-button {
+                min-height: 64px;
+                border-radius: 16px;
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+        }
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+            .join-button {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <main>
-    <section class="card" aria-label="Exclusive access">
+    <main class="page">
 
-      <h1>Exclusive Access</h1>
+        <section class="card">
 
-      <a
-        class="button"
-        href="https://t.me/addlist/3hu3GMYX8y02Mzcx"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Join channel"
-      >
-        Join Channel ↗
-      </a>
+            <h1>Exclusive Access</h1>
 
-    </section>
-  </main>
+            <h2>Private Access</h2>
+
+            <p class="tagline">
+                Beyond Limits • Beyond Ordinary
+            </p>
+
+            <a
+                class="join-button"
+                href="https://t.me/addlist/3hu3GMYX8y02Mzcx"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Join Channel"
+            >
+                Join Channel ↗
+            </a>
+
+        </section>
+
+    </main>
 
 </body>
 </html>
