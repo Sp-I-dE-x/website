@@ -2,34 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
     <meta name="theme-color" content="#070707">
-    <meta
-        name="description"
-        content="Private access."
-    >
+    <meta name="description" content="Private access.">
 
     <title>Exclusive Access</title>
 
     <style>
-        /* =========================================================
-           RESET
-        ========================================================= */
+        :root {
+            --background: #070707;
+            --card: rgba(255, 255, 255, 0.045);
+            --border: rgba(255, 255, 255, 0.12);
+            --text: #ffffff;
+            --secondary: rgba(255, 255, 255, 0.70);
+            --muted: rgba(255, 255, 255, 0.42);
+        }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
             min-width: 320px;
-            background: #070707;
+            min-height: 100%;
+            background: var(--background);
         }
 
         body {
@@ -38,21 +41,20 @@
             min-height: 100svh;
             min-height: 100dvh;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            place-items: center;
 
             padding:
-                max(20px, env(safe-area-inset-top))
+                max(22px, env(safe-area-inset-top))
                 max(18px, env(safe-area-inset-right))
-                max(20px, env(safe-area-inset-bottom))
+                max(22px, env(safe-area-inset-bottom))
                 max(18px, env(safe-area-inset-left));
 
             background:
                 radial-gradient(
-                    circle at 50% 0%,
-                    rgba(255, 255, 255, 0.07),
-                    transparent 42%
+                    950px 520px at 50% -12%,
+                    rgba(255, 255, 255, 0.075),
+                    transparent 62%
                 ),
                 linear-gradient(
                     180deg,
@@ -60,7 +62,7 @@
                     #050505 100%
                 );
 
-            color: #ffffff;
+            color: var(--text);
 
             font-family:
                 Inter,
@@ -76,30 +78,21 @@
             text-rendering: optimizeLegibility;
         }
 
-        /* =========================================================
-           MAIN
-        ========================================================= */
-
         .page {
             width: 100%;
-            max-width: 520px;
+            max-width: 600px;
         }
-
-        /* =========================================================
-           CARD
-        ========================================================= */
 
         .card {
             width: 100%;
-
             padding:
-                clamp(34px, 8vw, 52px)
-                clamp(20px, 6vw, 34px);
+                clamp(38px, 7vw, 52px)
+                clamp(20px, 5vw, 34px);
 
             text-align: center;
 
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 28px;
+            border: 1px solid var(--border);
+            border-radius: 30px;
 
             background:
                 linear-gradient(
@@ -109,65 +102,39 @@
                 );
 
             box-shadow:
-                0 30px 80px rgba(0, 0, 0, 0.48),
+                0 30px 85px rgba(0, 0, 0, 0.48),
                 inset 0 1px 0 rgba(255, 255, 255, 0.04);
 
             backdrop-filter: blur(18px);
             -webkit-backdrop-filter: blur(18px);
         }
 
-        /* =========================================================
-           MAIN HEADING
-        ========================================================= */
-
         h1 {
-            font-size: clamp(40px, 10vw, 64px);
+            font-size: clamp(40px, 9vw, 64px);
             font-weight: 800;
-
             line-height: 0.98;
             letter-spacing: -0.045em;
-
-            color: #ffffff;
-
-            overflow-wrap: anywhere;
+            color: var(--text);
         }
-
-        /* =========================================================
-           SECOND HEADING
-        ========================================================= */
 
         h2 {
-            margin-top: 14px;
-
-            font-size: clamp(20px, 5vw, 27px);
+            margin-top: 15px;
+            font-size: clamp(20px, 4.6vw, 27px);
             font-weight: 500;
-
             line-height: 1.15;
             letter-spacing: -0.02em;
-
-            color: rgba(255, 255, 255, 0.70);
+            color: var(--secondary);
         }
-
-        /* =========================================================
-           TAGLINE
-        ========================================================= */
 
         .tagline {
             margin-top: 12px;
-            margin-bottom: clamp(30px, 7vw, 40px);
-
-            font-size: clamp(13px, 3.5vw, 15px);
+            margin-bottom: clamp(32px, 6vw, 40px);
+            font-size: clamp(12px, 3vw, 15px);
             font-weight: 500;
-
             line-height: 1.4;
             letter-spacing: 0.08em;
-
-            color: rgba(255, 255, 255, 0.42);
+            color: var(--muted);
         }
-
-        /* =========================================================
-           BUTTON
-        ========================================================= */
 
         .join-button {
             display: flex;
@@ -175,41 +142,40 @@
             justify-content: center;
 
             width: 100%;
-            min-height: 70px;
+            min-height: 76px;
 
             padding: 18px 24px;
 
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            border-radius: 19px;
 
             background: #ffffff;
             color: #070707;
 
             text-decoration: none;
+            text-align: center;
 
-            font-size: clamp(16px, 4vw, 18px);
+            font-size: clamp(16px, 3.8vw, 19px);
             font-weight: 800;
             line-height: 1;
-
-            letter-spacing: 0.01em;
 
             cursor: pointer;
             user-select: none;
             touch-action: manipulation;
 
-            -webkit-tap-highlight-color: transparent;
+            box-shadow:
+                0 12px 30px rgba(0, 0, 0, 0.24);
 
             transition:
-                transform 0.12s ease,
-                opacity 0.12s ease,
-                box-shadow 0.12s ease;
+                transform 120ms ease,
+                opacity 120ms ease,
+                box-shadow 120ms ease;
         }
 
         .join-button:hover {
             opacity: 0.95;
-
             box-shadow:
-                0 10px 30px rgba(255, 255, 255, 0.08);
+                0 14px 34px rgba(0, 0, 0, 0.28);
         }
 
         .join-button:active {
@@ -217,55 +183,65 @@
         }
 
         .join-button:focus-visible {
-            outline: 3px solid rgba(255, 255, 255, 0.45);
+            outline: 3px solid rgba(255, 255, 255, 0.42);
             outline-offset: 4px;
         }
 
-        /* =========================================================
-           SMALL PHONES
-        ========================================================= */
-
-        @media (max-width: 380px) {
-            body {
-                padding-left: 14px;
-                padding-right: 14px;
-            }
-
+        @media (max-width: 480px) {
             .card {
+                border-radius: 24px;
                 padding:
-                    30px 15px 26px;
-
-                border-radius: 22px;
+                    34px 18px
+                    30px;
             }
 
             h1 {
-                font-size: 38px;
+                font-size: clamp(38px, 11vw, 52px);
             }
 
             h2 {
                 margin-top: 12px;
-                font-size: 19px;
             }
 
             .tagline {
-                margin-top: 10px;
-                margin-bottom: 28px;
-
-                font-size: 12px;
-                letter-spacing: 0.06em;
+                margin-bottom: 30px;
+                letter-spacing: 0.065em;
             }
 
             .join-button {
-                min-height: 64px;
-                border-radius: 16px;
-                padding-left: 18px;
-                padding-right: 18px;
+                min-height: 72px;
+                border-radius: 17px;
             }
         }
 
-        /* =========================================================
-           REDUCED MOTION
-        ========================================================= */
+        @media (max-width: 360px) {
+            body {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
+            .card {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            .tagline {
+                font-size: 11px;
+            }
+
+            .join-button {
+                min-height: 68px;
+                font-size: 16px;
+            }
+        }
 
         @media (prefers-reduced-motion: reduce) {
             .join-button {
@@ -276,10 +252,8 @@
 </head>
 
 <body>
-
     <main class="page">
-
-        <section class="card">
+        <section class="card" aria-label="Exclusive access">
 
             <h1>Exclusive Access</h1>
 
@@ -300,8 +274,6 @@
             </a>
 
         </section>
-
     </main>
-
 </body>
 </html>
